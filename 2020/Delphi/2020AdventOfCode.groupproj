@@ -9,6 +9,12 @@
         <Projects Include="Day2\Day2.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="Day3\Day3.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Day4\Day4.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -35,14 +41,32 @@
     <Target Name="Day2:Make">
         <MSBuild Projects="Day2\Day2.dproj" Targets="Make"/>
     </Target>
+    <Target Name="Day3">
+        <MSBuild Projects="Day3\Day3.dproj"/>
+    </Target>
+    <Target Name="Day3:Clean">
+        <MSBuild Projects="Day3\Day3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Day3:Make">
+        <MSBuild Projects="Day3\Day3.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Day4">
+        <MSBuild Projects="Day4\Day4.dproj"/>
+    </Target>
+    <Target Name="Day4:Clean">
+        <MSBuild Projects="Day4\Day4.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Day4:Make">
+        <MSBuild Projects="Day4\Day4.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="Day1;Day2"/>
+        <CallTarget Targets="Day1;Day2;Day3;Day4"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="Day1:Clean;Day2:Clean"/>
+        <CallTarget Targets="Day1:Clean;Day2:Clean;Day3:Clean;Day4:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="Day1:Make;Day2:Make"/>
+        <CallTarget Targets="Day1:Make;Day2:Make;Day3:Make;Day4:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
